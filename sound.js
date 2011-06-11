@@ -1,14 +1,20 @@
 $(document).ready(function() {
     var tones = [];
+    var t = 0;
+
     for (i = 0; i < 16 * 10; i++) {
         tones.push(false);
     }
 
-    color = function(x) {
+    color = function(x, i) {
         if (x) {
             return '#a00';
         } else {
-            return '#eee';
+            if (Math.round(i % 16) == t % 16) {
+                return '#fff';
+            } else {
+                return '#eee';
+            }
         }
     }
 
@@ -25,10 +31,9 @@ $(document).ready(function() {
             data(tones).
             style('background', color);
     }
-    update();
     
-    var t = 0;
     function sound() {
+        update();
         t_local = t % 16;
         for (i = 0; i < 10; i++) {
             if (tones[i*16 + t_local]) {
