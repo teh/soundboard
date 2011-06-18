@@ -10,3 +10,5 @@ Run 'sh generate_sounds'. Your directory should now have some sounds in it:
     tone_7.ogg  tone_8.ogg  tone_9.ogg
 
 Open soundboard.html in chrome 9+ or firefox 4+, click some squares.
+
+Uses d3.js available from http://mbostock.github.com/d3/
